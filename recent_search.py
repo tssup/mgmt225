@@ -67,7 +67,7 @@ def main():
         average = round(tweets['sentiment score'].mean(), 2)
         df = df.append({'Time' : current_time, 'Average' : average}, ignore_index = True)
         print(f"{current_time}           {average}")
-        time.sleep(int(sys.argv[2]))
+        time.sleep(5)
     
 
 
