@@ -52,24 +52,8 @@ def get_polarity(tweet):
 
 
 def main():
-
-    print("Time         Average Sentiment")
-    while True:
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        df = pd.DataFrame(columns=['Time', 'Average'])
-
-
         tweets = convert_to_dataframe()
-        tweets['sentiment score'] = tweets['Tweet'].apply(get_polarity)
-        #print(tweets)
-
-        average = round(tweets['sentiment score'].mean(), 2)
-        df = df.append({'Time' : current_time, 'Average' : average}, ignore_index = True)
-        print(f"{current_time}           {average}")
-        time.sleep(5)
-    
-
-
+        print(tweets)
+        
 if __name__ == "__main__":
     main()
