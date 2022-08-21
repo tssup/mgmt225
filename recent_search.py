@@ -20,7 +20,7 @@ hashtag = str(sys.argv[1])
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
-query_params = {'query': hashtag,'user.fields': 'username'}
+query_params = {'query': hashtag, 'user.fields': 'username'}
 
 
 def bearer_oauth(r):
@@ -32,9 +32,10 @@ def bearer_oauth(r):
     r.headers["User-Agent"] = "v2RecentSearchPython"
     return r
 
+
 def connect_to_endpoint(url, params):
     response = requests.get(url, auth=bearer_oauth, params=params)
-    #print(response.status_code)
+    # print(response.status_code)
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
     return response.json()
@@ -46,14 +47,16 @@ def convert_to_dataframe():
     data.columns = ['Account ID', 'Tweet']
     return data
 
+
 def get_polarity(tweet):
     return TextBlob(tweet).sentiment.polarity
 
 
-
 def main():
-        tweets = convert_to_dataframe()
-        print(tweets)
-        
+    tweets = convert_to_dataframe()
+    print(tweets)
+
+
 if __name__ == "__main__":
+    pd.set_option('display.max_columns', None)
     main()
