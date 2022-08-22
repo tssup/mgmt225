@@ -98,6 +98,6 @@ def main(i):
 
 if __name__ == '__main__':
     plt.style.use("fivethirtyeight")
-    ani = FuncAnimation(plt.gcf(), main, interval=5000)
+    ani = FuncAnimation(plt.gcf(), main, interval=30000)
     plt.tight_layout()
     plt.show()
