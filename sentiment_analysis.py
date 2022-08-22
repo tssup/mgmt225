@@ -93,7 +93,7 @@ def main(i):
     plt.title(f'Sentiment Trend Chart {sys.argv[1]}')
     plt.legend()
 
-    time.sleep(0.5)
+    # time.sleep(0.1)
 
 
 if __name__ == '__main__':
