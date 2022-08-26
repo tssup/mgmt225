@@ -93,11 +93,11 @@ def main(i):
     plt.title(f'Sentiment Trend Chart {sys.argv[1]}')
     plt.legend()
 
-    # time.sleep(0.1)
+    #time.sleep(0.0)
 
 
 if __name__ == '__main__':
     plt.style.use("fivethirtyeight")
-    ani = FuncAnimation(plt.gcf(), main, interval=4000)
+    ani = FuncAnimation(plt.gcf(), main, interval=5000)
     plt.tight_layout()
     plt.show()
